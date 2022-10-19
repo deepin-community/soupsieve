@@ -1,0 +1,12 @@
+Tests: unittests3
+Depends:
+ python3-all,
+ python3-bs4 (>= 4.7),
+ python3-html5lib,
+ python3-lxml,
+ python3-pytest,
+ python3-soupsieve
+
+Test-Command: /bin/true
+Depends: libxml2
+Restrictions: hint-testsuite-triggers

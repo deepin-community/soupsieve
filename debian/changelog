@@ -1,0 +1,146 @@
+soupsieve (2.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Correct Bug-lxml link in libxml2-2.9.11 patch.
+  * Add a hint-testsuite-triggers autopkgtest triggering on libxml2, thanks
+    for the suggestion Mattia Rizzolo. (Closes: #995870)
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 06 Nov 2021 21:52:37 -0700
+
+soupsieve (2.2.1-2) unstable; urgency=medium
+
+  * Patch test suite to XFAIL test_contains_cdata_html, due to CDATA behaviour
+    change in libxml2 >= 2.9.11. Fixing autopkgtests and FTBFS. Thanks Athos
+    Ribeiro for the investigation and bug report. (Closes: #995459)
+  * Bump Standards-Version to 4.6.0, no changes needed.
+  * Migrate to Build-Depend on dh-sequence-python3.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 02 Oct 2021 12:25:16 -0700
+
+soupsieve (2.2.1-1) unstable; urgency=medium
+
+  * New upstream point release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 28 Mar 2021 11:15:20 -0700
+
+soupsieve (2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 11 Feb 2021 13:00:48 -0800
+
+soupsieve (2.1-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Extend upstream metadata.
+  * Bump watch file format to 4, no changes needed.
+  * Bump Standards-Version to 4.5.1, no changes needed.
+
+  [ Emmanuel Arias ]
+  * d/control: Bump debhelper compat to 13, no changes needed.
+  * d/gbp.conf: set debian/master as default branch.
+    - According to DEP-14.
+  * d/salsa-ci.yml: enable salsa-ci.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 13 Dec 2020 10:19:23 -0800
+
+soupsieve (2.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Mark python3-soupsieve Multi-Arch: foreign. Thanks Helmut Grohne.
+    (Closes: #960967)
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 26 May 2020 10:09:07 -0700
+
+soupsieve (2.0-1) unstable; urgency=medium
+
+  * New upstream release
+    - Dropping Python 2.7 support
+  * Go back to upstream tarballs, the sphinx theme was removed.
+  * Bump copyright years.
+  * Bump Standards-Version to 4.5.0, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 13 Apr 2020 09:48:31 -0700
+
+soupsieve (1.9.5+dfsg-2) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #938518
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Apr 2020 12:02:32 -0400
+
+soupsieve (1.9.5+dfsg-1) unstable; urgency=medium
+
+  * New upstream point release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 24 Dec 2019 09:46:25 +0200
+
+soupsieve (1.9.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream point release.
+  * Bump Standards-Version to 4.4.1, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 04 Oct 2019 17:28:02 +0300
+
+soupsieve (1.9.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream point release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 24 Aug 2019 23:42:57 -0300
+
+soupsieve (1.9.2+dfsg-2) unstable; urgency=medium
+
+  * Drop pypy binary package, Debian is pruning python 2 modules, where
+    possible.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 04 Aug 2019 10:21:31 -0300
+
+soupsieve (1.9.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Supporting Python 3.8.
+  * Drop patches, superseded upstream.
+  * Bump debhelper compat to 12, using B-D syntax.
+  * Install upstream changelog.
+  * Bump Standards-Version to 4.4.0, no changes needed.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 09 Jul 2019 17:32:49 -0700
+
+soupsieve (1.8+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop patch skip-unavailable-builders, superseded upstream.
+  * Cherry-pick patch dont-install-tests from upstream.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 25 Feb 2019 11:27:50 -0800
+
+soupsieve (1.7.3+dfsg-3) unstable; urgency=medium
+
+  * Depend on py*-bs4 (>= 4.7) in the autopkgtests too.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 04 Feb 2019 07:09:40 +0100
+
+soupsieve (1.7.3+dfsg-2) unstable; urgency=medium
+
+  * Build-Depend on py*-bs4 (>= 4.7). (Closes: #921170)
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 03 Feb 2019 11:51:09 +0100
+
+soupsieve (1.7.3+dfsg-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #918513)
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 31 Jan 2019 09:31:20 +0100

@@ -1,0 +1,12 @@
+---
+Bug-Database: https://github.com/facelessuser/soupsieve/issues
+Bug-Submit: https://github.com/facelessuser/soupsieve/issues/new
+Changelog: https://facelessuser.github.io/soupsieve/about/changelog/
+Documentation: https://facelessuser.github.io/soupsieve/
+Donation: https://facelessuser.github.io/soupsieve/about/contributing/#contributing--support
+FAQ: https://facelessuser.github.io/soupsieve/faq/
+Registry:
+  - Name: PyPI
+    Entry: soupsieve
+Repository-Browse: https://github.com/facelessuser/soupsieve
+Repository: https://github.com/facelessuser/soupsieve.git

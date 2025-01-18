@@ -14,17 +14,17 @@ Soup Sieve has implemented most of the CSS selectors up through the latest CSS d
 number that don't make sense in a non-browser environment. Selectors that cannot provide meaningful functionality simply
 do not match anything. Some of the supported selectors are:
 
-- `#!css .classes`
-- `#!css #ids`
-- `#!css [attributes=value]`
-- `#!css parent child`
-- `#!css parent > child`
-- `#!css sibling ~ sibling`
-- `#!css sibling + sibling`
-- `#!css :not(element.class, element2.class)`
-- `#!css :is(element.class, element2.class)`
-- `#!css parent:has(> child)`
-- and [many more](./selectors/index.md)
+-   `#!css .classes`
+-   `#!css #ids`
+-   `#!css [attributes=value]`
+-   `#!css parent child`
+-   `#!css parent > child`
+-   `#!css sibling ~ sibling`
+-   `#!css sibling + sibling`
+-   `#!css :not(element.class, element2.class)`
+-   `#!css :is(element.class, element2.class)`
+-   `#!css parent:has(> child)`
+-   and [many more](./selectors/index.md)
 
 ## Installation
 
@@ -35,17 +35,23 @@ pip install beautifulsoup4
 ```
 
 In most cases, assuming you've installed version 4.7.0, that should be all you need to do, but if you've installed via
-some alternative method, and Soup Sieve is not automatically installed for your, you can install it directly:
+some alternative method, and Soup Sieve is not automatically installed, you can install it directly:
 
 ```
 pip install soupsieve
 ```
 
-If you want to manually install it from source, navigate to the root of the project and run
+If you want to manually install it from source, first ensure that [`build`][build] is installed:
 
 ```
-python setup.py build
-python setup.py install
+pip install build
+```
+
+Then navigate to the root of the project and build the wheel and install (replacing `<ver>` with the current version):
+
+```
+python -m build -w
+pip install dist/soupsive-<ver>-py3-none-any.whl
 ```
 
 ## Usage
@@ -124,9 +130,9 @@ You can match a single tag:
 
 ```pycon3
 >>> els = sv.select('p:is(.a, .b, .c)', soup)
->>> sv.match(els[0], 'p:not(.b)')
+>>> sv.match('p:not(.b)', els[0])
 True
->>> sv.match(els[1], 'p:not(.b)')
+>>> sv.match('p:not(.b)', els[1])
 False
 ```
 
@@ -185,7 +191,3 @@ Compiled patterns are cached, so if for any reason you need to clear the cache, 
 ```pycon3
 >>> sv.purge()
 ```
-
---8<--
-refs.txt
---8<--

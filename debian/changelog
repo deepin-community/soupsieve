@@ -1,3 +1,52 @@
+soupsieve (2.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.7.0, no changes needed.
+  * Bump copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 15 Aug 2024 11:12:11 +0200
+
+soupsieve (2.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 22 Sep 2023 22:37:34 +0530
+
+soupsieve (2.4.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 10 Jun 2023 17:47:06 -0400
+
+soupsieve (2.4.1-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 22 Apr 2023 08:11:40 -0400
+
+soupsieve (2.4-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.6.2, no changes needed.
+  * Bump copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 19 Feb 2023 10:22:56 -0400
+
+soupsieve (2.3.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Build with the pybuild pyproject plugin.
+    - Upstream switched from setuptools to hatchling.
+  * Drop patch libxml2-2.9.11, superseded upstream.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 08 Apr 2022 15:33:53 -0400
+
+soupsieve (2.3.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 23 Nov 2021 07:52:07 -0400
+
 soupsieve (2.3-1) unstable; urgency=medium
 
   * New upstream release.

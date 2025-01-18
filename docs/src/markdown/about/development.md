@@ -25,15 +25,9 @@ Directory             | Description
 
 ## Coding Standards
 
-When writing code, the code should roughly conform to PEP8 and PEP257 suggestions.  The project utilizes the Flake8
-linter (with some additional plugins) to ensure code conforms (give or take some of the rules).  When in doubt, follow
-the formatting hints of existing code when adding files or modifying existing files.  Listed below are the modules used:
-
-- @gitlab:pycqa/flake8
-- @gitlab:pycqa/flake8-docstrings
-- @gitlab:pycqa/pep8-naming
-- @ebeweber/flake8-mutable
-- @gforcada/flake8-builtins
+When writing code, the code should roughly conform to PEP8 and PEP257 suggestions along with some other requirements.
+The project utilizes the @astral-sh/ruff linter that helps to ensure code conforms (give or take some of the rules).
+When in doubt, follow the formatting hints of existing code when adding files or modifying existing files.
 
 Usually this can be automated with Tox (assuming it is installed): `tox -e lint`.
 
@@ -42,10 +36,17 @@ Usually this can be automated with Tox (assuming it is installed): `tox -e lint`
 Documents are in Markdown (with with some additional syntax provided by extensions) and are converted to HTML via Python
 Markdown. If you would like to build and preview the documentation, you must have these packages installed:
 
-- @Python-Markdown/markdown: the Markdown parser.
-- @mkdocs/mkdocs: the document site generator.
-- @squidfunk/mkdocs-material: a material theme for MkDocs.
-- @facelessuser/pymdown-extensions: this Python Markdown extension bundle.
+-   @Python-Markdown/markdown: the Markdown parser.
+-   @mkdocs/mkdocs: the document site generator.
+-   @squidfunk/mkdocs-material: a material theme for MkDocs.
+-   @facelessuser/pymdown-extensions: this Python Markdown extension bundle.
+
+It is advised that you just install document dependencies with the following as the above list may not include all
+document plugins:
+
+```
+pip install -r requirements/docs.txt
+```
 
 In order to build and preview the documents, just run the command below from the root of the project and you should be
 able to view the documents at `localhost:8000` in your browser. After that, you should be able to update the documents
@@ -89,7 +90,7 @@ In order to preserve good code health, a test suite has been put together with p
 these tests, you can use the following command:
 
 ```
-py.test
+pytest
 ```
 
 ### Running Validation With Tox
@@ -117,7 +118,7 @@ for specific versions of Python, you specify the environment with `-e PXY` where
 minor version.
 
 ```
-tox -e py37
+tox -e py310
 ```
 
 To target linting:
@@ -390,6 +391,4 @@ class SelectorLang:
 
 Attribute     | Description
 ------------- | -----------
-`languages`  | A list of regular expression objects that match a language pattern.
-
---8<-- "links.txt"
+`languages`   | A list of regular expression objects that match a language pattern.

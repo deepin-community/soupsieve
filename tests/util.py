@@ -43,7 +43,7 @@ class TestCase(unittest.TestCase):
     def wrap_xhtml(self, html):
         """Wrap HTML content with XHTML header and body."""
 
-        return """
+        return f"""
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
             "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -51,10 +51,10 @@ class TestCase(unittest.TestCase):
         <head>
         </head>
         <body>
-        {}
+        {html}
         </body>
         </html>
-        """.format(html)
+        """
 
     def setUp(self):
         """Setup."""
@@ -103,9 +103,11 @@ class TestCase(unittest.TestCase):
         with self.assertRaises(exception):
             self.compile_pattern(pattern, namespaces=namespace, custom=custom)
 
-    def assert_selector(self, markup, selectors, expected_ids, namespaces={}, custom=None, flags=0):
+    def assert_selector(self, markup, selectors, expected_ids, namespaces=None, custom=None, flags=0):
         """Assert selector."""
 
+        if namespaces is None:
+            namespaces = {}
         parsers = self.get_parsers(flags)
 
         print('----Running Selector Test----')
@@ -123,7 +125,8 @@ class TestCase(unittest.TestCase):
 
 
 def available_parsers(*parsers):
-    """Filter a list of parsers, down to the available ones.
+    """
+    Filter a list of parsers, down to the available ones.
 
     If there are none, report the test as skipped to pytest.
     """
@@ -134,7 +137,7 @@ def available_parsers(*parsers):
             (parser in ('xml', 'lxml') and not LXML_PRESENT) or
             (parser == 'html5lib' and not HTML5LIB_PRESENT)
         ):
-            print('SKIPPED {}, not installed'.format(parser))
+            print(f'SKIPPED {parser}, not installed')
         else:
             ran_test = True
             yield parser

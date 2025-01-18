@@ -4,11 +4,11 @@ Upstream-Contact: Isaac Muse <isaacmuse@gmail.com>
 Source: https://facelessuser.github.io/soupsieve/
 
 Files: *
-Copyright: 2018-2021, Isaac Muse <isaacmuse@gmail.com>
+Copyright: 2018-2024, Isaac Muse <isaacmuse@gmail.com>
 License: Expat
 
 Files: debian/*
-Copyright: 2020-2021, Stefano Rivera <stefanor@debian.org>
+Copyright: 2020-2024, Stefano Rivera <stefanor@debian.org>
 License: Expat
 
 License: Expat
